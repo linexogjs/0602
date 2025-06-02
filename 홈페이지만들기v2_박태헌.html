@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>개발자 희망 박태헌의 간단 블로그</title>
+  <link rel="stylesheet" href="홈페이지만들기v2_박태헌.css" />
+  <script src="홈페이지만들기v2_박태헌.js" defer></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>박태헌 | 풀스택 개발자 희망</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#skills">기술 스택</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#contact">연락하기</a></li>
+        <li class="login-menu">
+        <button id="openLoginBtn">관리자 로그인</button>
+        <!-- 관리자 로그인 폼 -->
+      <div id="admin-login">
+        <button id="logoutBtn" style="display:none;">로그아웃</button>
+      </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span id="closeLoginBtn" class="close">&times;</span>
+      <h3>관리자 로그인</h3>
+      <input type="text" id="adminId" placeholder="아이디" />
+      <input type="password" id="adminPwd" placeholder="비밀번호" />
+      <button id="loginBtn">로그인</button>
+      <p id="loginMessage"></p>
+    </div>
+  </div>
+
+  <main class="main-layout">
+
+    <section id="about">
+      <h2>자기소개</h2>
+      <div class="about-flex">
+        <div class="duck-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs3xSaRQ0ti9TyVWkjnE-miRq_xYajPszL4A&s" 
+               alt="오리 기본 이미지" 
+               class="about-duck duck-default" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwHuO9wqRB1DiotvfD9eYydqa77XklFZMcXg&s" 
+               alt="오리 hover 이미지" 
+               class="about-duck duck-hover" />
+        </div>
+      
+        <a href="https://github.com/linexogjs" target="_blank" class="github-link">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub 로고" class="github-logo" />
+          <p>GitHub 바로가기</p>
+        </a>
+      </div>
+
+      <p>안녕하세요! <strong>풀스택 개발자</strong>를 희망하는 박태헌입니다.</p>
+      <p>실무 프로젝트의 경험을 쌓고 스킬업을 하기 위해 지원했습니다.</p>
+      <s>오리 사진은 그냥 키워보고 싶어서 넣었습니다.. (youtube 도시오리)</s>
+
+      <div class="cheer-box">
+        <button id="cheerBtn">랜덤 음악 플리</button>
+        <p id="cheerMessage">추천곡 !</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>KH정보교육원에서 배울 기술 스택</h2>
+      <img src="https://lms.khsmartcampus.com/html/images/common/kh_og_image2.jpg" alt="kh" />
+      <ul>
+        <li><strong>프론트엔드</strong>: HTML, CSS, JavaScript, React</li>
+        <li><strong>백엔드</strong>: Node.js, Firebase, Spring MVC</li>
+        <li><strong>도구</strong>: Git, GitHub, VS Code, Eclipse</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>KH에서 프로젝트</h2>
+
+      
+
+      <!-- 로그인 성공 시 보이는 관리자용 프로젝트 입력 폼 -->
+      <div id="admin-projects" style="display:none; margin-top:20px;">
+        <h3>프로젝트 정보 수정</h3>
+        <label>세미 프로젝트명: <input type="text" id="semiProjectName" /></label><br />
+        <label>세미 프로젝트 설명: <input type="text" id="semiProjectDesc" /></label><br />
+        <label>세미 프로젝트 기술: <input type="text" id="semiProjectTech" /></label><br /><br />
+
+        <label>파이널 프로젝트명: <input type="text" id="finalProjectName" /></label><br />
+        <label>파이널 프로젝트 설명: <input type="text" id="finalProjectDesc" /></label><br />
+        <label>파이널 프로젝트 기술: <input type="text" id="finalProjectTech" /></label><br /><br />
+
+        <button id="saveProjectsBtn">저장하기</button>
+      </div>
+
+      <!-- 유튜브 비디오 -->
+      <div class="video-container" style="margin-top:20px;">
+        <iframe width="560" height="315"
+          src="https://www.youtube.com/embed/Ivlr3r6QBQs?si=j6X_1T3UjPBubsBo"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- 프로젝트 테이블 -->
+      <table id="projectsTable" style="margin-top:20px;">
+        <thead>
+          <tr>
+            <th>프로젝트명</th>
+            <th>설명</th>
+            <th>기술</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dev Blog</td>
+            <td>개발자 블로그 웹사이트</td>
+            <td>HTML, CSS</td>
+          </tr>
+          <tr id="semiProjectRow">
+            <td>세미 (Null)</td>
+            <td>Null</td>
+            <td>Null</td>
+          </tr>
+          <tr id="finalProjectRow">
+            <td>파이널 (Null)</td>
+            <td>Null</td>
+            <td>Null</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contact">
+    <h2>연락</h2>
+    <form>
+      <label for="contactName">이름:</label>
+      <input type="text" id="contactName" name="name" required />
+
+      <label for="contactEmail">이메일:</label>
+      <input type="email" id="contactEmail" name="email" required />
+
+      <label for="contactMessage">메시지:</label>
+      <textarea id="contactMessage" name="message" rows="5" required></textarea>
+
+      <button id="contactSubmit" type="submit">보내기</button>
+    </form>
+</section>
+
+    <!-- 관리자 전용 메시지 보기 테이블 (처음엔 숨김) -->
+    <section id="adminMessages" style="display: none; margin-top: 30px;">
+      <h3>받은 메시지</h3>
+      <table border="1" style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>메시지</th>
+          </tr>
+        </thead>
+        <tbody id="messageTableBody">
+          <!-- 메시지 내역이 여기에 들어감 -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 박태헌. KH교육정보원 과제제출 페이지</p>
+    <p><a href="#" class="top-link">최상단으로 올라가기</a></p>
+  </footer>
+
+</body>
+</html>

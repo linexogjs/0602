@@ -1,0 +1,432 @@
+/* 기본 설정 */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 헤더 */
+header {
+  background-color: #282c34;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav a {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #21a1f1;
+}
+
+/* 메인 레이아웃 */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* 각 section 공통 */
+section {
+  padding: 40px;
+  width: 800px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #282c34;
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* 자기소개 섹션 */
+.about-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.duck-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto; /* 가로 중앙 정렬 */
+  overflow: hidden;
+  cursor: pointer;
+   border-radius: 20px;
+}
+
+.about-duck {
+  position: absolute;
+  width: 180px;   
+  height: 180px;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.duck-default {
+  opacity: 1;
+  z-index: 1;
+}
+
+.duck-hover {
+  opacity: 0;
+  z-index: 2;
+}
+
+.duck-container:hover .duck-default {
+  opacity: 0;
+}
+
+.duck-container:hover .duck-hover {
+  opacity: 1;
+}
+
+.github-link {
+  display: block; /* inline-block에서 block으로 변경 */
+  width: 100px;   /* 아이콘 크기 맞춤 */
+  margin: 20px auto; /* 위아래 20px 간격, 좌우 중앙 정렬 */
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.github-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 5px;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.github-logo:hover {
+  transform: scale(1.1);
+}
+
+
+.github-link:hover p {
+  color: #61dafb;
+}
+
+.github-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+/* 응원 박스 */
+.cheer-box {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#cheerBtn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#cheerBtn:hover {
+  background-color: #21a1f1;
+}
+
+/* 기술 스택 */
+#skills img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#skills ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#skills li {
+  margin-bottom: 8px;
+}
+
+/* 프로젝트 */
+#admin-login input, #admin-projects input {
+  padding: 5px 8px;
+  margin: 5px 0;
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#admin-login button, #admin-projects button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 7px;
+  background-color: #61dafb;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#admin-login button:hover, #admin-projects button:hover {
+  background-color: #21a1f1;
+}
+
+#projectsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#projectsTable th, #projectsTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#projectsTable th {
+  background-color: #282c34;
+  color: white;
+}
+
+/* 유튜브 영상 */
+.video-container iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 10px;
+}
+
+/* 연락하기 폼 */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form input, form textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+form button {
+  width: 120px;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+form button:hover {
+  background-color: #21a1f1;
+}
+
+/* 푸터 */
+footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+footer a.top-link {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a.top-link:hover {
+  color: #21a1f1;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .main-layout, section {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .about-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .duck-container {
+    margin-bottom: 15px;
+  }
+}
+
+
+.login-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.login-menu button {
+  background-color: #61dafb;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.login-menu button:hover {
+  background-color: #21a1f1;
+}
+
+/* 모달 창 스타일 */
+.modal {
+  display: none; /* 기본 숨김 */
+  position: fixed;
+  z-index: 1500;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.modal-content button {
+  width: 50%;
+  padding: 10px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #21a1f1;
+}
+
+/* 닫기(X) 버튼 */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #61dafb;
+}
+
+#adminMessages {
+  display: none;
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#adminMessages h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+#adminMessages table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+}
+
+#adminMessages th,
+#adminMessages td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+#adminMessages th {
+  background-color: #4a90e2;
+  color: white;
+}
+
+#adminMessages tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.2s ease;
+}
